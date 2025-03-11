@@ -23,6 +23,45 @@ nav {
   .jumps,
   .socials {
     gap: 1rem;
+    max-width: 130px;
+    width: 100%;
+
+    a {
+      opacity: .7;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    &.jumps {
+      justify-content: flex-start;
+
+      .bio-icon {
+        border-radius: 100%;
+      }
+    }
+
+    &.socials {
+      justify-content: flex-end;
+
+      a {
+        filter: grayscale(100) brightness(0%);
+
+        &:hover {
+          filter: none;
+        }
+      }
+
+      .substack {
+        width: 25px !important;
+      }
+    }
 
     .jump-bio,
     .jump-books,
@@ -39,19 +78,6 @@ nav {
       @include hoverable-large;
       transition: .3s all;
     }
-
-    img {
-      width: 30px;
-      height: 30px;
-
-      &.bio-icon {
-        border-radius: 100%;
-      }
-
-      &.substack {
-        width: 25px !important;
-      }
-    }
   }
 
   .logo {
@@ -67,15 +93,9 @@ nav {
     }
   }
 
-  .socials {
-    a {
-      opacity: 1;
-    }
-
-    img.substack {
-      width: 40px;
-      height: 40px;
-    }
+  img.substack {
+    width: 40px;
+    height: 40px;
   }
 }
 

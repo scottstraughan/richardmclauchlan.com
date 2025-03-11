@@ -101,10 +101,11 @@
 
         &.amazon {
           background: #DD8400FF;
+          background: linear-gradient(0deg, rgba(221,132,0,1) 0%, rgba(255,187,19,1) 100%);
         }
 
         &.hurst {
-          background: #bbbcda;
+          background: linear-gradient(0deg, rgba(187,188,218,1) 0%, rgba(231,232,255,1) 100%);
         }
 
         img {

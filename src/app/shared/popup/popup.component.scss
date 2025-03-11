@@ -7,7 +7,7 @@
   --swc-popup-container-close-bg-color-hover: rgba(0, 0, 0, .1);
   --swc-popup-container-close-color: var(--color-white);
   --swc-popup-container-close-font-size: 70px;
-  --swc-popup-container-close-offset-top: calc(var(--nav-bar-height) - 20px);
+  --swc-popup-container-close-offset-top: 100px;
   --swc-popup-container-padding: 1rem;
   --swc-popup-popup-border-radius-large: 30px;
   --swc-popup-popup-border-radius-small: 16px;
@@ -59,7 +59,7 @@
     flex: 1;
 
     ::ng-deep > * {
-      width: 90vw;
+      width: 100vw;
       height: 90vh;
     }
 
