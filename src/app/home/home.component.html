@@ -1,0 +1,129 @@
+<section id="books" class="books">
+  <div class="faded-bg" [style.background-image]="'url(' + bgImage() + ')'"></div>
+  <div class="faded-bg-cover"></div>
+
+  <div class="wrapper">
+    <a class="book"
+       routerLink="/books/serious-minds"
+       title="Click to view more about this book"
+       (mouseenter)="onMouseOver('./assets/books/serious-minds.webp')">
+      <div class="book-wrapper">
+        <img ngSrc="./assets/books/serious-minds.webp"
+             priority
+             alt="Serious Minds Book Cover"
+             height="450"
+             width="302" />
+      </div>
+    </a>
+
+    <div class="book"
+         title="Click to view more about this book"
+         routerLink="/books/the-bagpipes"
+         (mouseenter)="onMouseOver('./assets/books/the-bagpipes.webp')">
+      <div class="book-wrapper">
+        <img ngSrc="./assets/books/the-bagpipes.webp"
+             priority
+             alt="The Bagpipes Book Cover"
+             height="453"
+             width="302" />
+        <img class="coming-soon"
+             src="./assets/coming-soon.svg"
+             alt="Coming 24th of April 2025"
+        />
+      </div>
+    </div>
+
+    <div class="book"
+         title="Click to view more about this book"
+         routerLink="/books/the-indefinable-school"
+         (mouseenter)="onMouseOver('./assets/books/the-indefinable-school.webp')">
+      <div class="book-wrapper">
+        <img ngSrc="./assets/books/the-indefinable-school.webp"
+             priority
+             alt="The Indefinable School Book Cover"
+             height="473"
+             width="302" />
+        <img class="coming-soon"
+             src="./assets/coming-soon.svg"
+             alt="Coming 24th of April 2025"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bio" class="bio">
+  <div class="wrapper">
+    <div class="about">
+      <h1>About Me</h1>
+      <p>Richard McLauchlan is a Scottish writer, educated at the Universities of St Andrews and Cambridge. The
+        author of Serious Minds and The Bagpipes, he also collaborated with John Campbell on acclaimed biography
+        Haldane (all published by Hurst). Richard co-founded the educational charity Light Up Learning.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor magna id accumsan vestibulum.
+        Suspendisse sed lacus dignissim, pretium nisl in, facilisis neque. Mauris vulputate mauris at urna facilisis,
+        quis mattis lacus rutrum. Aenean justo nisl, aliquam ac euismod sit amet, sodales vitae risus. Phasellus
+        ut ipsum urna. Donec nibh odio, blandit ac fermentum sit amet, vehicula in tellus. Pellentesque non nisi
+        vel ligula eleifend sollicitudin ut ac augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed nec auctor elit. Aliquam pulvinar est vitae urna interdum, sit amet tincidunt augue ornare. Morbi
+        justo tellus, vestibulum sit amet lorem sit amet, tincidunt gravida nisi. Ut id lacus et magna rhoncus
+        viverra. Fusce in congue lacus.</p>
+      <p>Donec nibh odio, blandit ac fermentum sit amet, vehicula in tellus. Pellentesque non nisi
+        vel ligula eleifend sollicitudin ut ac augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed nec auctor elit. Aliquam pulvinar est vitae urna interdum, sit amet tincidunt augue ornare. Morbi
+        justo tellus, vestibulum sit amet lorem sit amet, tincidunt gravida nisi. Ut id lacus et magna rhoncus
+        viverra. Fusce in congue lacus.</p>
+    </div>
+    <div class="photo">
+      <img ngSrc="./assets/richard.webp" alt="Richard McLauchlan" height="300" width="300" />
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact" [class.sent]="messageSent()">
+  <div class="wrapper">
+    @if (messageSent()) {
+      <div class="sent">
+        <div>Your message has been received!</div>
+        <div>
+          <button (click)="messageSent.set(false)">Send Another</button>
+        </div>
+      </div>
+    } @else {
+      <form action="https://formcarry.com/s/vnZ1Kahjhe1"
+            accept-charset="UTF-8"
+            enctype="multipart/form-data"
+            method="POST">
+
+        <h1>Contact Me</h1>
+
+        <div class="side-by-side">
+          <div>
+            <label for="name">Your Name</label>
+            <input type="text"
+                   id="name"
+                   name="name"
+                   required
+                   placeholder="Richard Haldane" />
+          </div>
+          <div>
+            <label for="email-address">Your Email Address</label>
+            <input type="email"
+                   id="email-address"
+                   required
+                   name="email"
+                   placeholder="richard@haldane-family.com" />
+          </div>
+        </div>
+
+        <label for="message">Message</label>
+        <textarea type="email"
+                  id="message"
+                  required
+                  name="email"
+                  placeholder="Please type your message here"></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    }
+  </div>
+</section>

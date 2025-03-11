@@ -1,0 +1,95 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(230, 230, 230, 0.89);
+  backdrop-filter: blur(20px);
+  top: 0;
+  z-index: 999999999;
+
+  .wrapper {
+    display: flex;
+    height: var(--nav-height);
+  }
+
+  .jumps,
+  .logo,
+  .socials {
+    @include center;
+  }
+
+  .jumps,
+  .socials {
+    gap: 1rem;
+
+    .jump-bio,
+    .jump-books,
+    .social-bluesky,
+    .social-substack {
+      display: none;
+
+      @media screen and (min-width: $mobile-breakpoint) {
+        display: block;
+      }
+    }
+
+    a {
+      @include hoverable-large;
+      transition: .3s all;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+
+      &.bio-icon {
+        border-radius: 100%;
+      }
+
+      &.substack {
+        width: 25px !important;
+      }
+    }
+  }
+
+  .logo {
+    @include center;
+    flex: 1;
+
+    img {
+      max-width: 180px;
+
+      @media screen and (min-width: $mobile-breakpoint) {
+        max-width: 230px;
+      }
+    }
+  }
+
+  .socials {
+    a {
+      opacity: 1;
+    }
+
+    img.substack {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+footer {
+  background-color: var(--color-black);
+  color: white;
+
+  .logo {
+    max-width: 200px;
+    margin-top: 1rem;
+  }
+
+  .legal {
+    font-size: .8rem;
+    opacity: .6;
+  }
+}

@@ -1,0 +1,9 @@
+@if (component) {
+  <div class="close" (click)="onClose()">
+    <img src="./assets/icons/close.svg" class="close-icon" alt="Close" title="Close this popup" />
+  </div>
+
+  <div class="container">
+    <ng-container *ngComponentOutlet="component"></ng-container>
+  </div>
+}

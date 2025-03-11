@@ -1,0 +1,23 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin hoverable {
+  transition: .3s all;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@mixin hoverable-large {
+  transition: .3s all;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
