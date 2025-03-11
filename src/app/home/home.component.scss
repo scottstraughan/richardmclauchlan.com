@@ -96,8 +96,12 @@
 }
 
 .contact {
-  padding: 2rem var(--section-padding-x) 0 var(--section-padding-x);
+  padding: var(--section-padding-y) 0;
   background-color: rgba(255, 255, 255, .5);
+
+  @media screen and (min-width: $mobile-breakpoint) {
+    padding: 2rem var(--section-padding-x) 0 var(--section-padding-x);
+  }
 
   &.sent {
     padding-bottom: var(--section-padding-y);
