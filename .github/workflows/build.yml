@@ -13,7 +13,7 @@ permissions:
   id-token: write
 
 env:
-  SITE_URL: https://www.richardmclauchlan.com
+  SITE_URL: https://scottstraughan.github.io/richardmclauchlan.com
 
 jobs:
   # Build the Angular site
