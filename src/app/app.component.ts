@@ -13,5 +13,5 @@ import { NgOptimizedImage } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  static readonly title: string = 'Richard McLauchlan (Author)';
+  static readonly title: string = 'Richard McLauchlan';
 }
