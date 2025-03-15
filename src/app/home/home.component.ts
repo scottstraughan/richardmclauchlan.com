@@ -1,11 +1,20 @@
-import { afterNextRender, AfterViewInit, Component, OnInit, signal, WritableSignal } from '@angular/core';
+import {
+  afterNextRender,
+  AfterViewInit,
+  Component,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
+  signal,
+  WritableSignal
+} from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { take, tap } from 'rxjs';
 import { PopupService } from '../shared/popup/popup.service';
 import { SeriousMindsComponent } from './popups/books/serious-minds/serious-minds.component';
 import { TheBagpipesComponent } from './popups/books/the-bagpipes/the-bagpipes.component';
 import { TheIndefinableSchoolComponent } from './popups/books/the-indefinable-school/the-indefinable-school.component';
-import { NgOptimizedImage } from '@angular/common';
+import { isPlatformBrowser, isPlatformServer, NgOptimizedImage } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -26,7 +35,8 @@ export class HomeComponent {
     private popupService: PopupService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private title: Title
+    private title: Title,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.activatedRoute.queryParams
       .pipe(
@@ -36,14 +46,13 @@ export class HomeComponent {
           }
         })
       )
-      .subscribe()
+      .subscribe();
 
     this.activatedRoute.params
       .pipe(
         tap(params => {
           if (params['bookName']) {
-            setTimeout(() =>
-              this.showBook(params['bookName']));
+            this.showBook(params['bookName']);
           }
         }),
       )
@@ -70,9 +79,7 @@ export class HomeComponent {
         .pipe(
           tap(() => {
             this.title.setTitle('Richard McLauchlan (Author)');
-
-            this.router.navigate(['/'])
-              .then();
+            this.router.navigate(['/']).then();
           }),
           take(1)
         )

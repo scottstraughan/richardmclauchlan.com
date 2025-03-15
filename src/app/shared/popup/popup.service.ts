@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PopupService {
+  private popups: PopupInstance<any>[] = [];
+
   /**
    * Constructor.
    * @param applicationRef
@@ -44,9 +46,19 @@ export class PopupService {
 
     const containerReference = rootContainerRef.createComponent(PopupComponent, { injector: injector });
     containerReference.instance.attach<T>(popupReference, component);
-
     popupReference.setContainerRef(containerReference);
+
+    this.popups.push(popupReference);
     return popupReference;
+  }
+
+  /**
+   * Close all popups.
+   */
+  closeAll() {
+    for (const popupReference of this.popups) {
+      popupReference.destroy();
+    }
   }
 }
 
@@ -95,6 +107,13 @@ export class PopupInstance<T> {
     data?: any
   ) {
     this.closed.next(data);
+    this.destroy();
+  }
+
+  /**
+   * Destroy the component.
+   */
+  destroy() {
     this.containerRef?.destroy();
   }
 

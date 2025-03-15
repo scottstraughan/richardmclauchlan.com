@@ -7,16 +7,17 @@ $mobile-breakpoint: 900px;
   --box-shadow-darker: 2px 2px 10px 0px rgba(0, 0, 0, .4);
   --border-radius: 16px;
   --color-black: #090909;
+  --color-grey: #131313;
   --color-white: #efefef;
   --color-hint: #b65657;
-  --nav-height: 100px;
-
+  --nav-height: 75px;
   --section-padding-y: 3rem;
   --section-padding-x: 1rem;
 
   @media screen and (min-width: $mobile-breakpoint) {
     --section-padding-y: 6rem;
     --section-padding-x: 2rem;
+    --nav-height: 100px;
   }
 }
 

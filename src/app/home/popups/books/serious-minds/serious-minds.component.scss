@@ -9,8 +9,8 @@
   overflow: auto;
 
   @media screen and (min-width: 900px) {
-    max-width: 75vw;
-    max-height: 75vh;
+    max-width: 1050px;
+    max-height: 740px;
     flex-direction: row;
   }
 
@@ -18,11 +18,10 @@
     @include center;
     flex: 1;
     background: #ccc;
-    min-height: 400px;
-    padding: 3rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding: 3rem;
 
     @media screen and (min-width: 900px) {
       max-width: 450px;
@@ -39,13 +38,14 @@
 
     .book {
       width: auto;
-      max-height: 100%;
+      max-height: 250px;
       box-shadow: var(--box-shadow);
 
       @media screen and (min-width: 900px) {
         max-width: 80%;
         height: auto;
         width: 100%;
+        max-height: 100%;
       }
     }
   }
@@ -54,10 +54,10 @@
     --side-padding: 2rem;
 
     @media screen and (min-width: $mobile-breakpoint) {
-      --side-padding: 3rem;;
+      --side-padding: 3rem;
     }
 
-    flex: 1;
+    flex: 3;
     display: flex;
     flex-direction: column;
 
@@ -89,23 +89,16 @@
         @include hoverable;
         display: block;
         padding: .8rem 1.5rem;
-        background-color: red;
         border-radius: var(--border-radius);
         font-size: .8rem;
         box-shadow: var(--box-shadow);
+        background-color: var(--color-black);
+        color: var(--color-white);
 
         @media screen and (min-width: $mobile-breakpoint) {
           display: inline-block;
         }
 
-        &.amazon {
-          background: #DD8400FF;
-          background: linear-gradient(0deg, rgba(221,132,0,1) 0%, rgba(255,187,19,1) 100%);
-        }
-
-        &.hurst {
-          background: linear-gradient(0deg, rgba(187,188,218,1) 0%, rgba(231,232,255,1) 100%);
-        }
 
         img {
           max-height: 25px;
