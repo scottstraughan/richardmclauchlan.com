@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 $max-width: 1250px;
 $mobile-breakpoint: 900px;
 
@@ -63,5 +65,42 @@ footer {
 
   @media screen and (min-width: $mobile-breakpoint) {
     padding: 0 2rem;
+  }
+}
+
+.buy-link {
+  @include hoverable;
+
+  display: flex;
+  border-radius: var(--border-radius);
+  font-size: .8rem;
+  box-shadow: var(--box-shadow);
+  background-color: var(--color-hint);
+  color: var(--color-white);
+  overflow: hidden;
+
+  @media screen and (min-width: $mobile-breakpoint) {
+    display: inline-flex;
+  }
+
+  > div {
+    @include center;
+    justify-content: left;
+    padding: .8rem;
+  }
+
+  > div:nth-of-type(1) {
+    background-color: rgba(0, 0, 0, .2);
+  }
+
+  > div:nth-of-type(2) {
+    flex: 1;
+    @include center;
+  }
+
+  img {
+    width: 22px;
+    height: auto;
+    vertical-align: middle;
   }
 }

@@ -64,15 +64,13 @@ nav {
         }
       }
 
-      .substack {
+      img {
         width: 25px !important;
       }
     }
 
     .jump-bio,
-    .jump-books,
-    .social-bluesky,
-    .social-substack {
+    .jump-books {
       display: none;
 
       @media screen and (min-width: $mobile-breakpoint) {
@@ -97,11 +95,6 @@ nav {
         max-width: 230px;
       }
     }
-  }
-
-  img.substack {
-    width: 40px;
-    height: 40px;
   }
 }
 

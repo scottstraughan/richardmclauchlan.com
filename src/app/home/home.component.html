@@ -1,25 +1,51 @@
-<section id="books" class="books">
-  <div class="faded-bg" [style.background-image]="'url(' + bgImage() + ')'"></div>
-  <div class="faded-bg-cover"></div>
+<section class="intro">
+  <div class="wrapper">
+    <div class="titles-container">
+      <div>
+        <h1>“Richly entertaining and perceptive. A revelation for pipers like me, and for anyone interested in
+          how an instrument can transform culture.”</h1>
+        <h2>— Alastair Campbell <small>(author of But What Can I Do? and co-host of The Rest Is Politics)</small></h2>
+        <a class="buy-link"
+           href="https://www.amazon.co.uk/Bagpipes-Cultural-History-Richard-McLauchlan/dp/180526284X"
+           target="_blank"
+           rel="nofollow">
+          <div>
+            <img src="./assets/icons/amazon.svg" alt="Amazon Logo">
+          </div>
+          <div>
+            Pre-order on Amazon
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="book">
+      <img ngSrc="./assets/books/the-bagpipes.webp"
+           priority
+           alt="The Bagpipes Book Cover"
+           height="453"
+           width="302" />
+    </div>
+  </div>
+</section>
 
+<section id="books" class="books">
   <div class="wrapper">
     <a class="book"
        routerLink="/books/serious-minds"
-       title="Click to view more about this book"
-       (mouseenter)="onMouseOver('./assets/books/serious-minds.webp')">
+       title="Click to view more about this book">
       <div class="book-wrapper">
         <img ngSrc="./assets/books/serious-minds.webp"
              priority
              alt="Serious Minds Book Cover"
              height="450"
              width="302" />
+        <div class="author">Richard McLauchlan</div>
       </div>
     </a>
 
-    <div class="book"
+    <a class="book"
          title="Click to view more about this book"
-         routerLink="/books/the-bagpipes"
-         (mouseenter)="onMouseOver('./assets/books/the-bagpipes.webp')">
+         routerLink="/books/the-bagpipes">
       <div class="book-wrapper">
         <img ngSrc="./assets/books/the-bagpipes.webp"
              priority
@@ -30,13 +56,13 @@
              src="./assets/coming-soon.svg"
              alt="Coming 24th of April 2025"
         />
+        <div class="author">Richard McLauchlan</div>
       </div>
-    </div>
+    </a>
 
-    <div class="book"
+    <a class="book"
          title="Click to view more about this book"
-         routerLink="/books/the-indefinable-school"
-         (mouseenter)="onMouseOver('./assets/books/the-indefinable-school.webp')">
+         routerLink="/books/the-indefinable-school">
       <div class="book-wrapper">
         <img ngSrc="./assets/books/the-indefinable-school.webp"
              priority
@@ -47,8 +73,89 @@
              src="./assets/coming-soon.svg"
              alt="Coming 24th of April 2025"
         />
+        <div class="author">Richard McLauchlan</div>
       </div>
-    </div>
+    </a>
+
+    <a class="book"
+       title="Click to view more about this book"
+       routerLink="/books/haldane">
+      <div class="book-wrapper">
+        <img ngSrc="./assets/books/haldane.webp"
+             priority
+             alt="The Forgotten Statesman Who Shaped Modern Britain Book Cover"
+             height="473"
+             width="302" />
+        <div class="author">John Campbell in collaboration with Richard McLauchlan</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="articles" class="articles">
+  <div class="wrapper">
+    <a class="article"
+       href="https://www.scotsman.com/news/opinion/columnists/the-real-life-scots-who-put-logan-roys-fictional-family-in-succession-in-the-shade-richard-mclauchlan-4098700"
+       target="_blank"
+       rel="noopener">
+      <div>
+       <h2><img src="./assets/articles/the-scotsman.webp" /></h2>
+       <h1>The real-life Scots who put Logan Roy's fictional family in Succession in the shade</h1>
+      </div>
+      <h3>11th Apr 2023</h3>
+    </a>
+
+    <a class="article"
+       href="https://www.thetimes.com/uk/scotland/article/six-of-the-most-influential-scots-youve-probably-never-heard-of-8922ghhwv"
+       target="_blank"
+       rel="noopener">
+      <div>
+        <h2><img src="./assets/articles/the-times.webp" /></h2>
+        <h1>Meet the most influential Scots you’ve probably never heard of</h1>
+      </div>
+      <h3>28th Dec 2024</h3>
+    </a>
+
+    <a class="article"
+       href="https://www.thetimes.com/uk/scotland/article/scotland-historic-bonds-germany-william-wallace-kd88253kw"
+       target="_blank"
+       rel="noopener">
+      <div>
+        <h2><img src="./assets/articles/the-times.webp" /></h2>
+        <h1>Scotland must not forget its historic bonds with Germany</h1>
+      </div>
+      <h3>31st Jan 2025</h3>
+    </a>
+  </div>
+</section>
+
+<section id="events" class="events">
+  <div class="wrapper events">
+    <a class="event"
+       href="https://www.toppingbooks.co.uk/events/edinburgh/richard-mclauchlan-bagpipes/"
+       target="_blank"
+       rel="noopener">
+      <div class="date">
+        Friday 2nd May 2025
+      </div>
+      <div>
+        <h1>The Bagpipes: A Cultural History with Richard McLauchlan</h1>
+        <h3>Pilrig St. Paul's Church, 1B Pilrig St, Edinburgh EH6 5AH</h3>
+      </div>
+    </a>
+
+    <a class="event"
+       href="https://www.boswellbookfestival.co.uk/"
+       target="_blank"
+       rel="noopener">
+      <div class="date">
+        9th - 11th May 2025
+      </div>
+      <div>
+        <h1>2025 Boswell Book Festival,</h1>
+        <h3>Dumfries House, Ayrshire</h3>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -102,7 +209,7 @@
                    id="name"
                    name="name"
                    required
-                   placeholder="Richard Haldane" />
+                   placeholder="John Smith" />
           </div>
           <div>
             <label for="email-address">Your Email Address</label>
@@ -110,7 +217,7 @@
                    id="email-address"
                    required
                    name="email"
-                   placeholder="richard@haldane-family.com" />
+                   placeholder="john@john-smith.com" />
           </div>
         </div>
 

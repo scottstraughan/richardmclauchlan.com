@@ -16,6 +16,8 @@ import { TheBagpipesComponent } from './popups/books/the-bagpipes/the-bagpipes.c
 import { TheIndefinableSchoolComponent } from './popups/books/the-indefinable-school/the-indefinable-school.component';
 import { isPlatformBrowser, isPlatformServer, NgOptimizedImage } from '@angular/common';
 import { Title } from '@angular/platform-browser';
+import { AppComponent } from '../app.component';
+import { HaldaneComponent } from './popups/books/haldane/haldane.component';
 
 @Component({
   selector: 'rm-home',
@@ -28,15 +30,13 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  readonly bgImage: WritableSignal<string> = signal('./assets/books/serious-minds.webp');
   readonly messageSent: WritableSignal<boolean> = signal(false);
 
   constructor(
     private popupService: PopupService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private title: Title,
-    @Inject(PLATFORM_ID) private platformId: Object
+    private title: Title
   ) {
     this.activatedRoute.queryParams
       .pipe(
@@ -59,10 +59,6 @@ export class HomeComponent {
       .subscribe();
   }
 
-  onMouseOver(image: string) {
-    this.bgImage.set(image);
-  }
-
   private showBook(bookName: string) {
     let obs = undefined;
 
@@ -72,13 +68,15 @@ export class HomeComponent {
       obs = this.popupService.show(TheBagpipesComponent);
     } if (bookName == 'the-indefinable-school') {
       obs = this.popupService.show(TheIndefinableSchoolComponent);
+    } if (bookName == 'haldane') {
+      obs = this.popupService.show(HaldaneComponent);
     }
 
     if (obs) {
       obs.onClose()
         .pipe(
           tap(() => {
-            this.title.setTitle('Richard McLauchlan (Author)');
+            this.title.setTitle(AppComponent.title);
             this.router.navigate(['/']).then();
           }),
           take(1)
