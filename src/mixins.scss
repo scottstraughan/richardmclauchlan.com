@@ -21,3 +21,11 @@
     transform: scale(1.1);
   }
 }
+
+@mixin shadowy {
+  box-shadow: var(--box-shadow);
+
+  &:hover {
+    box-shadow: var(--box-shadow-darker);
+  }
+}
