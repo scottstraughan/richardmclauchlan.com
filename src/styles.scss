@@ -5,8 +5,8 @@ $mobile-breakpoint: 900px;
 
 * {
   --border-default: #e1e1e1 1px solid;
-  --box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, .2);
-  --box-shadow-darker: 2px 2px 10px 0px rgba(0, 0, 0, .4);
+  --box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, .1);
+  --box-shadow-darker: 3px 3px 10px 0px rgba(0, 0, 0, .2);
   --border-radius: 16px;
   --color-black: #090909;
   --color-grey: #131313;
@@ -70,6 +70,7 @@ footer {
 
 .buy-link {
   @include hoverable;
+  @include shadowy;
 
   display: flex;
   border-radius: var(--border-radius);
