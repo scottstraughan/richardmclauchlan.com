@@ -10,7 +10,10 @@ import { AppComponent } from '../../../../app.component';
   imports: [
     NgOptimizedImage
   ],
-  styleUrl: '../serious-minds/serious-minds.component.scss'
+  styleUrls: [
+    '../serious-minds/serious-minds.component.scss',
+    '../the-bagpipes/the-bagpipes.component.scss'
+  ]
 })
 export class TheBagpipesComponent implements OnInit {
   constructor(
