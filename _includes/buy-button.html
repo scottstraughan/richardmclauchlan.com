@@ -22,6 +22,6 @@
    href="{{ include.url }}"
    target="_blank"
    rel="noopener">
-  <div><img src="{{icon | relative_url }}" alt="{{ service | downcase }} Logo"></div>
+  <div><img src="{{icon | downcase | relative_url }}" alt="{{ service | downcase }} Logo"></div>
   <div>{{ action }} on {{ service | camelcase }}</div>
 </a>
