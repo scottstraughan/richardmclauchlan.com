@@ -1,0 +1,193 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+@use "shared" as *;
+@use "home" as *;
+@use "books" as *;
+
+$max-width: 1250px;
+$mobile-breakpoint: 900px;
+
+* {
+  --border-default: #e1e1e1 1px solid;
+  --box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, .1);
+  --box-shadow-darker: 3px 3px 10px 0px rgba(0, 0, 0, .2);
+  --border-radius: 16px;
+  --color-black: #090909;
+  --color-grey: #131313;
+  --color-white: #efefef;
+  --color-hint: #b65657;
+  --nav-height: 75px;
+  --section-padding-y: 3rem;
+  --section-padding-x: 1rem;
+
+  @media screen and (min-width: $mobile-breakpoint) {
+    --section-padding-y: 6rem;
+    --section-padding-x: 2rem;
+    --nav-height: 100px;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, serif;
+  font-size: 16px;
+  color: #101010;
+  background-color: #ededed;
+
+  @media screen and (min-width: $mobile-breakpoint) {
+    --section-padding-y: 6rem;
+    --section-padding-x: 2rem;
+    font-size: 18px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+p {
+  opacity: .9;
+}
+
+button {
+  font-size: inherit;
+}
+
+.section,
+section,
+footer {
+  display: block;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.wrapper {
+  max-width: $max-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media screen and (min-width: $mobile-breakpoint) {
+    padding: 0 2rem;
+  }
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(230, 230, 230, 0.89);
+  backdrop-filter: blur(20px);
+  top: 0;
+  z-index: 999999999;
+
+  .wrapper {
+    display: flex;
+    height: var(--nav-height);
+    gap: 1rem;
+  }
+
+  a {
+    padding: .5rem;
+    transition: .3s all;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-bottom: transparent 6px solid;
+    border-top: transparent 6px solid;
+
+    &:hover {
+      border-bottom: var(--color-hint) 6px solid;
+      border-top: transparent 6px solid;
+    }
+  }
+
+  .jumps,
+  .logo,
+  .socials {
+    @include center;
+  }
+
+  .jumps,
+  .socials {
+    max-width: 130px;
+    width: 100%;
+
+    img {
+      width: 20px;
+      height: 20px;
+
+      @media screen and (min-width: $mobile-breakpoint) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &.jumps {
+      justify-content: flex-start;
+
+      .bio-icon {
+        border-radius: 100%;
+      }
+    }
+
+    &.socials {
+      justify-content: flex-end;
+
+      a {
+        filter: grayscale(100) brightness(0%);
+
+        &:hover {
+          filter: none;
+        }
+      }
+
+      img {
+        width: 25px !important;
+      }
+    }
+
+    .jump-bio,
+    .jump-books {
+      display: none;
+
+      @media screen and (min-width: $mobile-breakpoint) {
+        display: flex;
+      }
+    }
+  }
+
+  .logo {
+    @include center;
+    flex: 1;
+
+    img {
+      max-width: 180px;
+
+      @media screen and (min-width: $mobile-breakpoint) {
+        max-width: 230px;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: var(--color-black);
+  color: white;
+
+  .logo {
+    max-width: 200px;
+    margin-top: 1rem;
+  }
+
+  .legal {
+    font-size: .8rem;
+    opacity: .6;
+  }
+}

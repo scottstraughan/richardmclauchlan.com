@@ -1,0 +1,27 @@
+{%- assign service = "hurst" -%}
+{%- assign action = "Order" -%}
+
+{%- if include.url contains "amazon" -%}
+  {%- assign service = "Amazon" -%}
+{%- elsif include.url contains "hurstpublishers.com" -%}
+  {%- assign service = "Hurst" -%}
+{%- elsif include.url contains "waterstones" -%}
+  {%- assign service = "Waterstones" -%}
+{%- elsif include.url contains "bookshop" -%}
+  {%- assign service = "Bookshop" -%}
+{%- endif -%}
+
+{%- if include.preorder -%}
+  {%- assign action = "Preorder" -%}
+{%- endif -%}
+
+{%- assign icon = "/assets/images/icons/" | append: service | append: ".svg" %}
+
+<a class="icon-link-button buy {{ service | downcase }}"
+   title="Click to {{ action }} this book via {{ service }}"
+   href="{{ include.url }}"
+   target="_blank"
+   rel="noopener">
+  <div><img src="{{icon | relative_url }}" alt="{{ service | downcase }} Logo"></div>
+  <div>{{ action }} on {{ service | camelcase }}</div>
+</a>

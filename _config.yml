@@ -1,0 +1,23 @@
+title: "Richard McLauchlan"
+description: >-
+  Richard McLauchlan is a Scottish writer with a passion for making the past live vividly in the present, and for
+  exploring the intellectual and cultural traditions of the West.
+baseurl: ""
+keywords:
+  - richard
+  - mclauchlan
+  - author
+  - scottish
+url: "https://www.richardmclauchlan.com"
+
+plugins:
+  - jekyll-feed
+
+collections_dir: _collections
+
+collections:
+  books:
+    output: true
+
+sass:
+  style: compact
