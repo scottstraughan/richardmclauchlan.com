@@ -1,0 +1,50 @@
+---
+layout: page
+---
+
+{% capture date_time_now  %}{{ 'now' | date: '%s' }}{% endcapture %}
+{% capture date_time_released %}{{ page.release_date | date: '%s' }}{% endcapture %}
+
+<div class="books-container" id="{{ page.title | slugify }}">
+    <section class="intro">
+        <div class="wrapper books">
+            <div class="overview">
+                <div>
+                    {% if date_time_released > date_time_now %}
+                    <div class="coming-soon">Coming {{ page.release_date | date: "%-d %B %Y" }}</div>
+                    {% endif %}
+
+                    <h1>{{ page.title }}</h1>
+                    {% if page.sub_title %}
+                    <h2>{{ page.sub_title }}</h2>
+                    {% endif %}
+                    <p>{{ page.description }}</p>
+
+                    {% if page.isbn %}
+                    <div class="isbn">ISBN: {{ page.isbn }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="book">
+                <img src="{{ page.thumbnail | relative_url }}"
+                     alt="The Bagpipes Book Cover"
+                     height="453"
+                     width="302" />
+            </div>
+        </div>
+    </section>
+
+    <section class="links">
+        <div class="wrapper">
+            {% if date_time_released > date_time_now %}
+                {%- assign preorder = true -%}
+            {% endif %}
+
+            {% for link in page.buy_links -%}
+                {% include buy-button.html url=link preorder=preorder %}
+            {%- endfor %}
+        </div>
+    </section>
+
+    {{ page.content }}
+</div>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% assign keywords = site.keywords %}
+    {% if page.keywords %}{% assign keywords = page.keywords | concat: keywords %}{% endif %}
+
+    {% assign description = site.description %}
+    {% if page.description %}{% assign description = page.description %}{% endif %}
+
+    <title>{{ page.title }} - {{ site.title }}</title>
+
+    <link rel="stylesheet" href="{{'/assets/css/main.css' | relative_url}}" />
+    <link rel="icon" type="image/png" href="{{'/favicon.png' | relative_url}}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords | join: ', ' }}">
+
+    {% for script in page.scripts -%}
+        <script type="text/javascript" src="{{ script | relative_url }}"></script>
+    {%- endfor %}
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+            <div class="jumps">
+                <a class="jump-books" href="{{'/' | relative_url }}#books" title="View my books">
+                    <img src="{{'/assets/images/icons/books.svg' | relative_url }}"
+                         alt="Books icon"/>
+                </a>
+                <a class="jump-bio" href="{{'/' | relative_url }}#bio" title="Read my bio">
+                    <img class="bio-icon"
+                         src="{{'/assets/images/icons/richard.webp' | relative_url }}"
+                         alt="Bio icon"
+                         height="30"
+                         width="30" />
+                </a>
+                <a class="jump-contact" href="{{'/' | relative_url }}#contact" title="Contact me">
+                    <img src="{{'/assets/images/icons/send.svg' | relative_url }}"
+                         title="Contact icon" />
+                </a>
+            </div>
+
+            <div class="logo">
+                <a href="{{'/' | relative_url }}">
+                    <img alt="Richard McLauchlan Logo"
+                         src="{{'/assets/images/logo-black.svg' | relative_url }}"
+                         height="70"
+                         width="503" />
+                </a>
+            </div>
+
+            <div class="socials">
+                <a class="jump-books" href="{{'/' | relative_url }}#articles" title="View my articles">
+                    <img src="{{'/assets/images/icons/articles.svg' | relative_url }}"
+                         alt="Books icon"/>
+                </a>
+                <a class="jump-books" href="{{'/' | relative_url }}#events" title="Upcoming Events">
+                    <img src="{{'/assets/images/icons/events.svg' | relative_url }}"
+                         alt="Books icon"/>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>{{content}}</main>
+
+    <footer>
+        <div class="wrapper">
+            <div class="legal">
+                &copy; Copyright Richard McLauchlan
+            </div>
+            <img class="logo"
+                 src="{{'/assets/images/logo-white.svg' | relative_url }}"
+                 alt="Richard McLauchlan Logo"
+                 height="70"
+                 width="503" />
+        </div>
+    </footer>
+</body>
+</html>

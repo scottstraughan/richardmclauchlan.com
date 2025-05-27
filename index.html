@@ -1,0 +1,266 @@
+---
+layout: page
+title: "Home"
+scripts:
+ - /assets/js/home.js
+keywords:
+ - haldane
+ - edinburgh academy
+ - bagpipes
+ - scottish
+ - home
+description: >-
+  Richard McLauchlan is a Scottish writer with a passion for making the past live vividly in the present, and for
+  exploring the intellectual and cultural traditions of the West.
+---
+
+<div class="home-container">
+  <section class="intro">
+    <div class="wrapper">
+      <div class="titles-container">
+        <div>
+          <a href="{{'/books/the-bagpipes' | relative_url }}">
+            <h1>“Richly entertaining and perceptive. A revelation for pipers like me, and for anyone interested in
+              how an instrument can transform culture.”</h1>
+            <h2>— Alastair Campbell <small>(author of But What Can I Do? and co-host of The Rest Is Politics)</small></h2>
+          </a>
+
+          <div class="follow-up">
+            <a class="icon-link-button amazon"
+               href="https://www.amazon.co.uk/Bagpipes-Cultural-History-Richard-McLauchlan/dp/180526284X"
+               target="_blank"
+               rel="nofollow">
+              <div>
+                <img src="{{'/assets/images/icons/amazon.svg' | relative_url }}" alt="Amazon Logo">
+              </div>
+              <div>
+                Order Now on Amazon
+              </div>
+            </a>
+            <a class="icon-link-button spotify"
+               href="https://open.spotify.com/playlist/1DgCPsDvriaQpcNLQYYEZx?si=JdMYUS1AQLumebA_LSuLCA&pi=9QhMzB78TASmA&nd=1&dlsi=9b35b2cae9264bf6"
+               target="_blank"
+               rel="noopener">
+              <div>
+                <img src="{{'/assets/images/icons/spotify.png' | relative_url }}" alt="Spotify Logo">
+              </div>
+              <div>
+                Listen on Spotify
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="{{'/books/the-bagpipes' | relative_url }}" class="book">
+        <img src="./assets/images/books/the-bagpipes/book-cover.webp"
+             alt="The Bagpipes Book Cover"
+             height="453"
+             width="302" />
+      </a>
+    </div>
+  </section>
+
+  <section id="books" class="books">
+    <div class="wrapper">
+      {% assign books = site.books | sort: 'release_date' %}
+      {% for book in books  %}
+      <a class="book" href="{{ book.url }}" title="Click to view more about this book">
+        <div class="book-wrapper">
+          <img src="{{ book.thumbnail | relative_url}}"
+               alt="{{ book.title | relative_url}} Book Cover"
+               height="450"
+               width="302" />
+          <div class="author">{{ book.author }}</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="articles" class="articles">
+    <div class="wrapper">
+      <a class="article"
+         href="https://open.spotify.com/episode/0TqWOg6tqrfnP549l154EU"
+         target="_blank"
+         rel="noopener">
+        <div>
+          <h2><img class="article-logo" src="{{'/assets/images/articles/bigrab.webp' | relative_url}}" /></h2>
+          <h1 class="title">Big Rab Show Podcast - Episode 432</h1>
+        </div>
+        <h3>23th Apr 2025</h3>
+      </a>
+
+      <div class="article">
+        <div>
+          <h2><img class="article-logo" src="{{'/assets/images/articles/rnz-logo.svg' | relative_url}}" /></h2>
+          <a class="title"
+             href="https://www.rnz.co.nz/national/programmes/sunday/audio/2018983898/a-cultural-history-of-bagpipes"
+             target="_blank"
+             rel="noopener">A Cultural History of Bagpipes Interview</a>
+          <a class="download"
+             href="https://podcast.radionz.co.nz/downloads/sun/sun-20250420-1027-a_cultural_history_of_bagpipes-128.mp3"
+             target="_blank"
+             rel="noopener">
+            <img class="play" src="{{'/assets/images/icons/play.svg' | relative_url}}" />
+            Download and Listen Now (mp3)</a>
+        </div>
+        <h3>20th Apr 2025</h3>
+      </div>
+
+      <a class="article"
+         href="https://www.scotsman.com/news/opinion/columnists/the-real-life-scots-who-put-logan-roys-fictional-family-in-succession-in-the-shade-richard-mclauchlan-4098700"
+         target="_blank"
+         rel="noopener">
+        <div>
+          <h2><img class="article-logo" src="{{'/assets/images/articles/the-scotsman.webp' | relative_url}}" /></h2>
+          <h1 class="title">The real-life Scots who put Logan Roy's fictional family in Succession in the shade</h1>
+        </div>
+        <h3>11th Apr 2023</h3>
+      </a>
+
+      <a class="article"
+         href="https://www.thetimes.com/uk/scotland/article/six-of-the-most-influential-scots-youve-probably-never-heard-of-8922ghhwv"
+         target="_blank"
+         rel="noopener">
+        <div>
+          <h2><img class="article-logo" src="{{'/assets/images/articles/the-times.webp' | relative_url}}" /></h2>
+          <h1 class="title">Meet the most influential Scots you’ve probably never heard of</h1>
+        </div>
+        <h3>28th Dec 2024</h3>
+      </a>
+
+      <a class="article"
+         href="https://www.thetimes.com/uk/scotland/article/scotland-historic-bonds-germany-william-wallace-kd88253kw"
+         target="_blank"
+         rel="noopener">
+        <div>
+          <h2><img class="article-logo" src="{{'/assets/images/articles/the-times.webp' | relative_url}}" /></h2>
+          <h1 class="titles-container">Scotland must not forget its historic bonds with Germany</h1>
+        </div>
+        <h3>31st Jan 2025</h3>
+      </a>
+    </div>
+  </section>
+
+  <section id="events" class="events">
+    <div class="wrapper events">
+      <a class="event"
+         href="https://www.toppingbooks.co.uk/events/edinburgh/richard-mclauchlan-bagpipes/"
+         target="_blank"
+         rel="noopener">
+        <div class="date">
+          Friday 2nd May 2025
+        </div>
+        <div>
+          <h1>The Bagpipes: A Cultural History with Richard McLauchlan</h1>
+          <h3>Pilrig St. Paul's Church, 1B Pilrig St, Edinburgh EH6 5AH</h3>
+        </div>
+      </a>
+
+      <a class="event"
+         href="https://www.boswellbookfestival.co.uk/"
+         target="_blank"
+         rel="noopener">
+        <div class="date">
+          9th - 11th May 2025
+        </div>
+        <div>
+          <h1>2025 Boswell Book Festival,</h1>
+          <h3>Dumfries House, Ayrshire</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="bio" class="bio">
+    <div class="wrapper">
+      <div class="photo">
+        <img src="{{'/assets/images/richard.webp' | relative_url}}" alt="Richard McLauchlan" height="300" width="300" />
+      </div>
+
+      <h1>About Me</h1>
+
+      <p>Richard McLauchlan is a Scottish writer with a passion for making the past live vividly in the present, and for
+        exploring the intellectual and cultural traditions of the West.</p>
+
+      <p>Educated at the Universities of St Andrews and Cambridge, Richard's PhD was on the austere but spiritually
+        luminous poetry of R.S. Thomas and was published as <i>Saturday's Silence</i> by the University of Wales Press in
+        2016.</p>
+
+      <p>After a formative year living in Germany – busking with his bagpipes on the streets of Cologne and learning the
+        language – Richard co-founded the charity Light Up Learning in 2015, with the aim of igniting a love of learning
+        in those most at risk from disengaging from education. LUL now provides life-changing, one-on-one mentoring to
+        over 170 young people in schools across Edinburgh, the Lothians and the Borders every week.</p>
+
+      <p>Richard's historical work began with his collaboration with John Campbell on <i>Haldane: The Forgotten Statesman
+        Who Shaped Modern Britain</i> (Hurst, 2020), which became a <i>Sunday Times</i> ‘Politics and Current Affairs Book
+        of the Year’ and a <i>Telegraph</i> ‘Best Book of the Year’. He then published <i>Serious Minds</i> (Hurst, 2022),
+        a biography of the wider Haldane family, showing them to be one of Britain's most extraordinary intellectual
+        dynasties, on a par with the Darwins and the Keyneses.</p>
+
+      <p>His new book <i>The Bagpipes: A Cultural History</i> (Hurst, 2025) is the first accessible cultural history of
+        the
+        instrument ever to be written. It aims to change the prevailing perceptions of this strange conflation of bag and
+        sticks, showing the instrument's remarkable diversity and ubiquity, as well as trying to understand its continuing
+        capacity to evoke the deepest responses in the human person.</p>
+
+      <p>2025 will also see the release of <i>The Indefinable School: The Story of The Edinburgh Academy 1974-2024</i>
+        (Polaris
+        Publishing), Richard's account of the past fifty years at one of the most iconic - and, in recent times,
+        controversial - schools in Scotland's capital. Published in the Academy's bicentennial year, this will serve as
+        the second volume of the school's history to accompany Magnus Magnusson's <i>The Clacken and the Slate</i> of
+        1974.</p>
+
+      <p>Richard lives in Haddington, East Lothian, with his wife and two young boys.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrapper">
+      <!-- Form has not set, allow user to edit -->
+      <form class="not-sent"
+            action="https://formcarry.com/s/lQde6W_83ok"
+            accept-charset="UTF-8"
+            enctype="multipart/form-data"
+            method="post">
+
+        <h1>Contact Me</h1>
+
+        <div class="side-by-side">
+          <div>
+            <label for="name">Your Name</label>
+            <input type="text"
+                   id="name"
+                   name="name"
+                   required
+                   placeholder="John Smith" />
+          </div>
+          <div>
+            <label for="email-address">Your Email Address</label>
+            <input type="email"
+                   id="email-address"
+                   required
+                   name="email"
+                   placeholder="john@john-smith.com" />
+          </div>
+        </div>
+
+        <label for="message">Message</label>
+        <textarea id="message"
+                  required
+                  name="message"
+                  placeholder="Please type your message here"></textarea>
+
+        <input class="button" type="submit" value="Send Message" />
+      </form>
+
+      <!-- Form is sent -->
+      <div id="sent" class="sent">
+        <div>Your message has been received!</div>
+        <div>
+          <a class="button send-again" href="{{'/' | relative_url }}#contact">Send Another</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
